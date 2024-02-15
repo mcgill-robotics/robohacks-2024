@@ -1,7 +1,8 @@
 #include <WiFi.h>
+
 #include "include/rhComms.h"
 
-const char* ssid     = "ESP32-Access-Point";
+const char* ssid = "ESP32-Access-Point";
 const char* password = "123456789";
 
 CarController cont;
@@ -12,19 +13,13 @@ void setup() {
   Serial.begin(115200);
   pinMode(2, OUTPUT);  // set the LED pin mode
   digitalWrite(2, LOW);
-  Serial.println("Serial Started");
 
-//  delay(1000);
+  //  delay(1000);
   WiFi.softAP(ssid, password);
-  Serial.println("SoftAP started");
-  cont.setIPAddress(WiFi.softAPIP());
-  Serial.println("ip address set");
   cont.setServer(&server);
-  Serial.println("server set");
+  Serial.print("IP Address of ESP32: ");
   Serial.println(WiFi.softAPIP());
-  Serial.println("ip address got");
   server.begin();
-  Serial.println("Server started");
 }
 
 void loop() {

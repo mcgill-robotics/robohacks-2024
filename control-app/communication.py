@@ -4,14 +4,13 @@ import socket
 
 class CommunicationInterface():
     data = {}
-    ip_address = ''
+    ip_address = '192.168.4.1'
     port = 80
     sock = None
+    hasConnection = False
     jsonData = None
 
-    def __init__(self, ip_address, port, config_path="user_config.json"):
-        self.ip_address = ip_address
-        self.port = port
+    def __init__(self, config_path="user_config.json"):
         with open(config_path, 'r') as config_file:
             self.data = json.load(config_file)
 
@@ -28,32 +27,37 @@ class CommunicationInterface():
             return 0
         except:
             return -1
-    def connectSocket(self, ip_address=ip_address, port=port):
+    def connectSocket(self, ip_address, port):
         self.ip_address = ip_address
         self.port = port
+        self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.sock.settimeout(5)
         try:
-            self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.sock.connect((self.ip_address, self.port))
-            return 0
-        except:
-            return -1
+            self.hasConnection = True
+            return True
+        except socket.timeout:
+            return False
         
     def closeSocket(self):
         try:
             self.sock.close()
-            return 0
+            self.hasConnection = False
+            return True
         except:
-            return -1
+            return False
         
     def sendUpdates(self):
         try:
             self.createJSON()
             self.sock.sendall(self.jsonData.encode('utf8'))
             return 0
-        except:
-            return -1
+        except socket.error:
+            return 1
         
     def getConnectionStatus(self):
         error = self.sock.getsockopt(socket.SOL_SOCKET, socket.SO_ERROR)
         return error
     
+    def getSockConnection(self):
+        return self.hasConnection
