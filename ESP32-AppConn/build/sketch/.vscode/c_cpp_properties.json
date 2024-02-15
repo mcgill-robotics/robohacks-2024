@@ -1,0 +1,32 @@
+#line 1 "C:\\Users\\Vincent\\Documents\\GitHub\\robohacks-2024\\ESP32-AppConn\\.vscode\\c_cpp_properties.json"
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:\\Users\\Vincent\\AppData\\Local\\Arduino15\\packages",
+                "C:/Users/Vincent/AppData/Local/Arduino15/packages/esp32/hardware/esp32/2.0.14/libraries",
+                "C:/Users/Vincent/AppData/Local/Arduino15/packages/esp32/hardware/esp32/2.0.14/cores/esp32",
+                "C:/Users/Vincent/AppData/Local/Arduino15/packages/esp32/hardware/esp32/2.0.14/tools/sdk/esp32/include/esp_wifi/include",
+                "C:/Users/Vincent/AppData/Local/Arduino15/packages/esp32/hardware/esp32/2.0.14/tools/sdk/esp32/include/esp_wifi/include/esp_private",
+                "C:/Users/Vincent/AppData/Local/Arduino15/packages/esp32/hardware/esp32/2.0.14/tools/sdk/esp32/include/freertos/include",
+                "C:/Users/Vincent/AppData/Local/Arduino15/packages/esp32/hardware/esp32/2.0.14/tools/sdk/esp32s3/include/freertos/include/esp_additions/freertos",
+                "C:/Users/Vincent/AppData/Local/Arduino15/packages/esp32/hardware/esp32/2.0.14/tools/sdk/esp32/dio_qspi/include",
+                "C:/Users/Vincent/AppData/Local/Arduino15/packages/esp32/hardware/esp32/2.0.14/tools/sdk/esp32/include/esp_common/include",
+                "C:/Users/Vincent/AppData/Local/Arduino15/packages/esp32/hardware/esp32/2.0.14/tools/sdk/esp32/include/"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.22000.0",
+            "compilerPath": "cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-msvc-x64"
+        }
+    ],
+    "version": 4
+}

@@ -3,22 +3,17 @@ import socket
 
 
 class CommunicationInterface():
-    data = {
-        "controlType": {"Controller": 0, "Keyboard": 1},
-        "leftStick": {"x": 0.0, "y": 0.0},
-        "rightStick": {"x": 0.0, "y":0.0},
-        "buttons": {"Y": 0, "X": 0, "A": 0, "B": 0, "UP": 0, "DOWN": 0, "LEFT": 0, "RIGHT": 0},
-        "keys": {"UP": 0, "DOWN": 0, "LEFT": 0, "RIGHT": 0, "W": 0, "A": 0, "S": 0, "D": 0},
-        "mouse": {"x": 0, "y": 0}
-    }
-    ip_address = '192.168.1.10'
+    data = {}
+    ip_address = ''
     port = 80
     sock = None
     jsonData = None
 
-    def __init__(self, ip_address, port):
+    def __init__(self, ip_address, port, config_path="user_config.json"):
         self.ip_address = ip_address
         self.port = port
+        with open(config_path, 'r') as config_file:
+            self.data = json.load(config_file)
 
     def updateData(self, category, parameter, value):
         try:
@@ -52,6 +47,7 @@ class CommunicationInterface():
         
     def sendUpdates(self):
         try:
+            self.createJSON()
             self.sock.sendall(self.jsonData.encode('utf8'))
             return 0
         except:

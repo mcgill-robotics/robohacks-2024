@@ -1,0 +1,8 @@
+#line 1 "C:\\Users\\Vincent\\Documents\\GitHub\\robohacks-2024\\ESP32-AppConn\\.vscode\\arduino.json"
+{
+    "sketch": "esp32-appconn.ino",
+    "configuration": "PartitionScheme=default,FlashMode=qio,FlashFreq=80,UploadSpeed=921600,DebugLevel=none,EraseFlash=none",
+    "board": "esp32:esp32:esp32wrover",
+    "output": "build",
+    "port": "COM4"
+}

@@ -5,7 +5,7 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "C:\\Users\\Vincent\\AppData\\Local\\Arduino15\\packages",
-                "C:/Users/Vincent/AppData/Local/Arduino15/packages/esp32/hardware/esp32/2.0.14/libraries/WiFi",
+                "C:/Users/Vincent/AppData/Local/Arduino15/packages/esp32/hardware/esp32/2.0.14/libraries",
                 "C:/Users/Vincent/AppData/Local/Arduino15/packages/esp32/hardware/esp32/2.0.14/cores/esp32",
                 "C:/Users/Vincent/AppData/Local/Arduino15/packages/esp32/hardware/esp32/2.0.14/tools/sdk/esp32/include/esp_wifi/include",
                 "C:/Users/Vincent/AppData/Local/Arduino15/packages/esp32/hardware/esp32/2.0.14/tools/sdk/esp32/include/esp_wifi/include/esp_private",
