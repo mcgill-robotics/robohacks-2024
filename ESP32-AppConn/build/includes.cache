@@ -20,11 +20,6 @@
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\Vincent\\Documents\\GitHub\\robohacks-2024\\ESP32-AppConn\\build\\sketch\\src\\rhComms.cpp",
-    "Include": "",
-    "Includepath": null
-  },
-  {
     "Sourcefile": "C:\\Users\\Vincent\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\WiFi\\src\\WiFi.cpp",
     "Include": "",
     "Includepath": null

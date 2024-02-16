@@ -1,9 +1,10 @@
 # 1 "C:\\Users\\Vincent\\Documents\\GitHub\\robohacks-2024\\ESP32-AppConn\\ESP32-AppConn.ino"
 # 2 "C:\\Users\\Vincent\\Documents\\GitHub\\robohacks-2024\\ESP32-AppConn\\ESP32-AppConn.ino" 2
-# 3 "C:\\Users\\Vincent\\Documents\\GitHub\\robohacks-2024\\ESP32-AppConn\\ESP32-AppConn.ino" 2
 
-const char* ssid = "testESP32";
-const char* password = "1234";
+# 4 "C:\\Users\\Vincent\\Documents\\GitHub\\robohacks-2024\\ESP32-AppConn\\ESP32-AppConn.ino" 2
+
+const char* ssid = "ESP32-Access-Point";
+const char* password = "123456789";
 
 CarController cont;
 
@@ -14,9 +15,12 @@ void setup() {
   pinMode(2, 0x03); // set the LED pin mode
   digitalWrite(2, 0x0);
 
-  delay(1000);
-  Serial.println(cont.initialize(ssid, password, &server));
-  Serial.println(cont.getIPAddress());
+  //  delay(1000);
+  WiFi.softAP(ssid, password);
+  cont.setServer(&server);
+  Serial.print("IP Address of ESP32: ");
+  Serial.println(WiFi.softAPIP());
+  server.begin();
 }
 
 void loop() {
