@@ -5,6 +5,8 @@ controller = Controller() #Main Controller for GUI
 
 ###### CONTROLLER MAPPING ######
 
+## UNUSED (No available controllers)
+
 controller_input_map = {
     "leftStick": AnalogStick(None,(300,400), 0, 1),
     "rightStick": AnalogStick(None,(500,400), 2, 3),
